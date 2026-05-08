@@ -1,0 +1,178 @@
+:root {
+    --pink-accent: #e37c8f;
+    --dark-grey: #1a1a1a;
+    --bg-paper: #f9f9f9;
+}
+
+body {
+    background-color: #d1d1d1;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.newspaper-container {
+    background-color: var(--bg-paper);
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border: 1px solid #ccc;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.title-top {
+    font-size: 3.5rem;
+    margin: 0;
+    letter-spacing: 2px;
+    color: var(--dark-grey);
+}
+
+.title-main {
+    font-family: 'Special Elite', cursive; /* Fonte manuscrita simulada */
+    color: var(--pink-accent);
+    font-size: 5rem;
+    margin: -20px 0 10px 0;
+    text-transform: none;
+    font-weight: 400;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 10px 0;
+    border-top: 2px solid black;
+}
+
+.double-line {
+    border: none;
+    border-top: 1px solid black;
+    border-bottom: 4px solid black;
+    height: 6px;
+    margin-bottom: 30px;
+}
+
+/* Artigos e Fotos */
+.content-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.article-2 {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.photo-frame {
+    border: 15px solid var(--pink-accent);
+    padding: 5px;
+    position: relative;
+    /* Efeito de borda serrilhada (selo) simplificado */
+    outline: 5px dashed var(--bg-paper);
+    outline-offset: -10px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cursive-title {
+    font-size: 2.2rem;
+    color: var(--dark-grey);
+    margin-bottom: 15px;
+}
+
+.cursive-title span {
+    font-size: 4rem;
+    color: var(--pink-accent);
+    font-family: 'Special Elite', cursive;
+    float: left;
+    line-height: 0.8;
+    margin-right: 5px;
+}
+
+p {
+    font-family: 'Special Elite', typewriter;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    text-align: justify;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .article, .article-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .article-2 .text-block {
+        order: 2;
+    }
+
+    .article-2 .photo-frame {
+        order: 1;
+    }
+
+    .title-top { font-size: 2rem; }
+    .title-main { font-size: 3rem; }
+
+    .header-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Container para alinhar capivaras e texto */
+.header-with-capybaras {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Garante que fiquem nas pontas */
+    margin-bottom: 10px;
+}
+
+.header-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Estilização das Capivaras */
+.capy-img {
+    width: 100px; /* Ajuste o tamanho conforme preferir */
+    height: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1)); /* Sombra suave */
+}
+
+/* Inverter a capivara da direita para ela olhar para o centro */
+.capy-right {
+    transform: scaleX(-1);
+}
+
+/* Ajuste responsivo para telas pequenas */
+@media (max-width: 600px) {
+    .capy-img {
+        width: 60px; /* Capivaras menores no celular */
+    }
+
+    .title-main {
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
+}
